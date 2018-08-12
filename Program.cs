@@ -26,6 +26,7 @@ namespace cablemodem_info
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>().ConfigureServices((services) => {
                     services.Add(new ServiceDescriptor(typeof(HttpClient),_httpclient));
+                    services.Add(new ServiceDescriptor(typeof(StatusPageProcessor),typeof(StatusPageProcessor),ServiceLifetime.Scoped));
                 });
     }
 }

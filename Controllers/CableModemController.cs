@@ -3,44 +3,32 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using HtmlAgilityPack;
+using cablemodem_info.Processors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace cablemodem_info 
 {
-
-    
-
     [Route("api/[controller]")]
     [ApiController]
     public class CableModemController : Controller
     {
-        private HttpClient _httpClient;
+        internal StatusPageProcessor PageProcessor {
+            private set;
+            get;
+        }
 
-        public CableModemController(HttpClient httpClient) 
+        public CableModemController(StatusPageProcessor pageProcessor) 
         {
-            _httpClient = httpClient;
+            PageProcessor = pageProcessor;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var document = await GetStatusPage();
-
-            var tables = document.DocumentNode.SelectNodes("//table");
+            var response = await PageProcessor.ParseStatus(ModemModel.SB6183);
             
-            return Ok("OK!");
+            return Ok(response);
         }
-
-        public async Task<HtmlDocument> GetStatusPage()
-        {
-            var response = await _httpClient.GetAsync("http://192.168.100.1/RgConnect.asp");
-            var doc = new HtmlDocument();
-            var stream = await response.Content.ReadAsStreamAsync();
-            doc.Load(stream);
-            return doc;
-        }
-
     }
 
 }
