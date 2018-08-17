@@ -7,7 +7,7 @@ using cablemodem_info.Processors;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace cablemodem_info 
+namespace CableModemInfoService 
 {
     public class StatusPageProcessor 
     {

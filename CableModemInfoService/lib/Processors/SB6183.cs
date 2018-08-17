@@ -5,7 +5,7 @@ using HtmlAgilityPack;
 using System.Net.Http;
 using System.Linq;
 
-namespace cablemodem_info.Processors
+namespace CableModemInfoService.Processors
 {
     /// This html parsing is specific to the SB6183
     public class SB6183

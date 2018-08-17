@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace cablemodem_info
+namespace CableModemServiceInfo
 {
     public class Program
     {
