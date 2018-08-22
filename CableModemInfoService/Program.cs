@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using  CableModemInfoService.Processors;
 
 namespace CableModemServiceInfo
 {
@@ -26,7 +27,7 @@ namespace CableModemServiceInfo
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>().ConfigureServices((services) => {
                     services.Add(new ServiceDescriptor(typeof(HttpClient),_httpclient));
-                    services.Add(new ServiceDescriptor(typeof(StatusPageProcessor),typeof(StatusPageProcessor),ServiceLifetime.Scoped));
+                    services.Add(new ServiceDescriptor(typeof(StatusPageProcessorFactory),typeof(StatusPageProcessorFactory),ServiceLifetime.Scoped));
                 });
     }
 }

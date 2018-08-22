@@ -8,7 +8,7 @@ using System.Linq;
 namespace CableModemInfoService.Processors
 {
     /// This html parsing is specific to the SB6183
-    public class SB6183
+    public class SB6183 : IModemProcessor
     {
         public async Task<string> Process(HttpClient httpClient)
         {

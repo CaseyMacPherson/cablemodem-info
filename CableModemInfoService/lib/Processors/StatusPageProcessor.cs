@@ -1,19 +1,15 @@
-
-using System;
-using System.Net;
-using System.Linq;
-using cablemodem_info.Exceptions;
-using cablemodem_info.Processors;
 using System.Net.Http;
 using System.Threading.Tasks;
+using CableModemInfoService.Exceptions;
+using CableModemInfoService.Processors;
 
-namespace CableModemInfoService 
+namespace CableModemInfoService.Processors
 {
-    public class StatusPageProcessor 
+    public class StatusPageProcessorFactory 
     {
         HttpClient WebClient {get;set;}
 
-        public StatusPageProcessor(HttpClient httpClient) 
+        public StatusPageProcessorFactory(HttpClient httpClient) 
         {
             WebClient = httpClient;
         }

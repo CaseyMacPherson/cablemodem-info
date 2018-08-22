@@ -3,29 +3,29 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using cablemodem_info.Processors;
+using CableModemInfoService.Processors;
 using Microsoft.AspNetCore.Mvc;
 
-namespace cablemodem_info 
+namespace CableModemInfoService 
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CableModemController : Controller
     {
-        internal StatusPageProcessor PageProcessor {
+        internal StatusPageProcessorFactory PageProcessorFactory {
             private set;
             get;
         }
 
-        public CableModemController(StatusPageProcessor pageProcessor) 
+        public CableModemController(StatusPageProcessorFactory pageProcessor) 
         {
-            PageProcessor = pageProcessor;
+            PageProcessorFactory = pageProcessor;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var response = await PageProcessor.ParseStatus(ModemModel.SB6183);
+            var response = await PageProcessorFactory.ParseStatus(ModemModel.SB6183);
             
             return Ok(response);
         }
