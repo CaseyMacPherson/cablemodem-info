@@ -1,10 +1,10 @@
-using System.Threading.Tasks;
 using System.Net.Http;
+using System.Threading.Tasks;
 
-namespace CableModemInfoService.Processors
+namespace CableModemInfoService.lib.Processors
 {
     public interface IModemProcessor
     {
-        Task<string> Process(HttpClient httpClient);
+        Task<ModemReport> Process(HttpClient httpClient);
     }
 }

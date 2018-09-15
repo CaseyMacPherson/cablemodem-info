@@ -1,9 +1,8 @@
 using System.Net.Http;
 using System.Threading.Tasks;
-using CableModemInfoService.Exceptions;
-using CableModemInfoService.Processors;
+using CableModemInfoService.lib.Exceptions;
 
-namespace CableModemInfoService.Processors
+namespace CableModemInfoService.lib.Processors
 {
     public class StatusPageProcessorFactory 
     {
@@ -14,7 +13,7 @@ namespace CableModemInfoService.Processors
             WebClient = httpClient;
         }
 
-        public async Task<string> ParseStatus(ModemModel model)
+        public async Task<ModemReport> ParseStatus(ModemModel model)
         {
             switch(model)
             { 

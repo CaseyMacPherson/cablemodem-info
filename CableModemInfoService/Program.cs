@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using System.Net.Http;
+using CableModemInfoService.lib.Processors;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
-using  CableModemInfoService.Processors;
 
-namespace CableModemServiceInfo
+namespace CableModemInfoService
 {
     public class Program
     {
         //This thing must be a singleton instance if you don't want to leak resources.
-        private static readonly HttpClient _httpclient = new HttpClient();
+        //You'd attach whatever handlers you'd want on the client here. For testing you could write a handler that would  
+        //prevent the request from going out the the requested URI.
+        private static readonly HttpClient Httpclient = new HttpClient();
 
         public static void Main(string[] args)
         {
@@ -26,7 +21,7 @@ namespace CableModemServiceInfo
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>().ConfigureServices((services) => {
-                    services.Add(new ServiceDescriptor(typeof(HttpClient),_httpclient));
+                    services.Add(new ServiceDescriptor(typeof(HttpClient),Httpclient));
                     services.Add(new ServiceDescriptor(typeof(StatusPageProcessorFactory),typeof(StatusPageProcessorFactory),ServiceLifetime.Scoped));
                 });
     }

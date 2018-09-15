@@ -1,4 +1,4 @@
-namespace CableModemInfoService.Processors
+namespace CableModemInfoService.lib.Processors
 {
     public enum ModemModel
     {

@@ -1,8 +1,7 @@
 using System;
-using CableModemInfoService.Processors;
+using CableModemInfoService.lib.Processors;
 
-
-namespace CableModemInfoService.Exceptions 
+namespace CableModemInfoService.lib.Exceptions 
 {
     [System.Serializable]
     public class UnsupportedModelException : System.Exception

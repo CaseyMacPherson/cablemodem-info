@@ -1,21 +1,14 @@
-using System;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
-using CableModemInfoService.Processors;
+using CableModemInfoService.lib.Processors;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CableModemInfoService 
+namespace CableModemInfoService.Controllers 
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CableModemController : Controller
     {
-        internal StatusPageProcessorFactory PageProcessorFactory {
-            private set;
-            get;
-        }
+        internal StatusPageProcessorFactory PageProcessorFactory { private set; get;}
 
         public CableModemController(StatusPageProcessorFactory pageProcessor) 
         {
@@ -27,7 +20,7 @@ namespace CableModemInfoService
         {
             var response = await PageProcessorFactory.ParseStatus(ModemModel.SB6183);
             
-            return Ok(response);
+            return Json(response);
         }
     }
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\casey\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\casey\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_CableModemInfo.-591286733.00" t="ExcludeRecursive" />
+    <e p="D:\src\github\CaseyMacPherson\cablemodem-info" t="IncludeFlat">
+      <e p="CableModemInfo.sln" t="IncludeFlat" />
+      <e p="CableModemInfoService" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Bin" t="ExcludeRecursive" />
+        <e p="CableModemInfoService.csproj" t="IncludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="CableModemController.cs" t="Include" />
+        </e>
+        <e p="lib" t="Include">
+          <e p="Exceptions" t="Include">
+            <e p="UnsupportedModelException.cs" t="Include" />
+          </e>
+          <e p="Processors" t="Include">
+            <e p="IModemProcessor.cs" t="Include" />
+            <e p="ModemModel.cs" t="Include" />
+            <e p="ModemReport.cs" t="Include" />
+            <e p="SB_6183" t="Include">
+              <e p="Reports" t="Include">
+                <e p="DownstreamBondedRows.cs" t="Include" />
+                <e p="StartupRows.cs" t="Include" />
+                <e p="UpstreamBondedRows.cs" t="Include" />
+              </e>
+              <e p="SB6183.cs" t="Include" />
+            </e>
+            <e p="StatusPageProcessor.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.1" t="Include">
+              <e p="CableModemInfoService.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="wwwroot" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
